@@ -40,3 +40,25 @@ let score = 0;
 
 //Initializing time
 let time = 10;
+
+function addRandomWordToDOM() {
+  randomWord = words[Math.floor(Math.random() * words.length)];
+  word.innerHTML = randomWord;
+}
+//Update score
+function updateScore() {
+  score++;
+  scoreEl.innerHTML = score;
+}
+
+//Update time
+const countdown = setInterval(updateTime,1000);
+
+function updateTime() {
+  if (time > 0) {
+    time--;
+  } else {
+    clearInterval(countdown);
+    gameOver();
+  }
+};
