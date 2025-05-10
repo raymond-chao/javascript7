@@ -62,3 +62,50 @@ function updateTime() {
     gameOver();
   }
 };
+
+//Game over
+function gameOver() {
+  endgameEl.style.display = "block";
+}
+
+//Main function
+text.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    if (text.value === randomWord) {
+      updateScore();
+      addRandomWordToDOM();
+      addTime();
+      text.value = "";
+    }
+    else {
+      text.value = "";
+      alert("Wrong word");
+    }
+  }
+});
+//Hide settings
+settingsBtn.addEventListener("click", function (event) {
+  if (settings.style.display == "flex") {
+    settings.style.display = "none";
+  }
+  else if (settings.style.display = "none") {
+    settings.style.display = "flex";
+  }
+})
+//Change settings
+let difficulty = difficultySelect.value;
+difficultySelect.addEventListener("change", function (e) {
+  difficulty = e.target.value;
+});
+
+//Add time
+function addTime() {
+  if (difficulty === "easy") {
+    time += 5;
+  } else if (difficulty === "medium") {
+    time += 3;
+  } else if (difficulty === "hard") {
+    time += 1;
+  }
+}
+addWordToDOM();
