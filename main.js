@@ -41,7 +41,7 @@ let score = 0;
 //Initializing time
 let time = 10;
 
-function addRandomWordToDOM() {
+function addWordToDOM() {
   randomWord = words[Math.floor(Math.random() * words.length)];
   word.innerHTML = randomWord;
 }
@@ -73,7 +73,7 @@ text.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     if (text.value === randomWord) {
       updateScore();
-      addRandomWordToDOM();
+      addWordToDOM();
       addTime();
       text.value = "";
     }
@@ -84,14 +84,14 @@ text.addEventListener("keypress", function (e) {
   }
 });
 //Hide settings
-settingsBtn.addEventListener("click", function (event) {
+settingsBtn.addEventListener("click", function (e) {
   if (settings.style.display == "flex") {
-    settings.style.display = "none";
+    settings.style.display == "none";
   }
   else if (settings.style.display = "none") {
     settings.style.display = "flex";
   }
-})
+});
 //Change settings
 let difficulty = difficultySelect.value;
 difficultySelect.addEventListener("change", function (e) {
