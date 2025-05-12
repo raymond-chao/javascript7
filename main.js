@@ -57,11 +57,13 @@ const countdown = setInterval(updateTime,1000);
 function updateTime() {
   if (time > 0) {
     time--;
+    timeEl.innerHTML = time + "s";
   } else {
     clearInterval(countdown);
     gameOver();
   }
 };
+
 
 //Game over
 function gameOver() {
@@ -85,8 +87,8 @@ text.addEventListener("keypress", function (e) {
 });
 //Hide settings
 settingsBtn.addEventListener("click", function (e) {
-  if (settings.style.display == "flex") {
-    settings.style.display == "none";
+  if (settings.style.display = "flex") {
+    settings.style.display = "none";
   }
   else if (settings.style.display = "none") {
     settings.style.display = "flex";
